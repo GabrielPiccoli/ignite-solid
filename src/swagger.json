@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Desafio Introdução ao SOLID",
+    "description": "API de desafio do módulo 2, ignite NODEJS",
+    "version": "1.0.0",
+    "contact": {
+      "email": "gabriel.pdmarcos@gmail.com"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Criar Novo Usuário",
+        "description": "Rota para criação de um novo usuário",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "email": { "type": "string" }
+                },
+                "example": {
+                    "name": "Nome do Usuário",
+                    "email": "E-mail do Usuário"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso"
+          },
+          "400": {
+            "description": "Erro na criação do usuário"
+          }
+        }
+      }
+    }
+  }
+}
